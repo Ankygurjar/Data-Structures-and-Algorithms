@@ -1,16 +1,6 @@
-class TreeNode{
-    constructor(data){
-        this.data = data
-        this.left = null
-        this.right = null
-    }
-}
-
-
 class KrushKal{
     constructor(){
         this.graph = new Map()
-        this.tree = new TreeNode()
     }
 
     AddNodesToGraph(node){
@@ -25,9 +15,11 @@ class KrushKal{
         }
     }
 
-    AddNodeToTree(node){
-        let curNode = new TreeNode(node)
-        
+    AddNodeToTree(){
+        let arrOfNodes = {}
+        for(let key of this.graph.keys()){
+            arrOfNodes[key] = new Set()
+        }
     }
 
     AddEdgesToNodes(node, edges){
@@ -63,4 +55,4 @@ ob.AddEdgesToNodes('v5', ['v2','v3', 'v6'])
 ob.AddEdgesToNodes('v6', ['v5','v3', 'v6'])
 
 ob.Display()
-ob.AddNodeToTree('v1')
+ob.AddNodeToTree()
